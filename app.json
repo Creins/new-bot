@@ -1,10 +1,10 @@
 
 
 {
-  "name": "BWM-XMD-QUANTUM",
-  "description": "Best WhatsApp bot developed by Ibrahim Adams",
+  "name": "WHATSAPP BOT",
+  "description": "Best WhatsApp bot developed by sir bravin",
   "keywords": ["bot", "node", "baileys", "whatsapp"],
-  "logo": "https://files.catbox.moe/2kcb4s.jpeg",
+  "logo": "https://files.catbox.moe/4n1tap.jpg",
   "repository": "https://github.com/ekitale/maths-project",
   "success_url": "/",
   "stack": "heroku-24",
@@ -75,7 +75,7 @@
       "required": false 
     },
     "OWNER_NUMBER": {
-      "description": "Enter your number eg, 2547xxxxxxx",
+      "description": "Enter your number eg, 254717263689",
       "value": "",
       "required": false 
     },
@@ -96,7 +96,7 @@
     },
     "OWNER_NAME": {
       "description": "Owner name",
-      "value": "Ibrahim Adams",
+      "value": "sir bravin",
       "required": false
     },
     "SESSION_ID": {
