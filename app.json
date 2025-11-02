@@ -56,7 +56,7 @@
     },
     "BOT_URL": {
       "description": "Image or video url for your bot menu",
-      "value": "https://files.catbox.moe/4n1tap.jpg,https://files.catbox.moe/rxwloa.jpeg",
+      "value": "https://files.catbox.moe/rxwloa.jpeg",
       "required": false
     },
     "PUBLIC_MODE": {
