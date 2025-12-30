@@ -1,10 +1,10 @@
 
 
 {
-  "name": "_JEEPERS CREEPER KE_🇰🇪",
-  "description": "jeepers creeper developed by sir bravintech",
+  "name": "_AUDI-RSB",
+  "description": "Audi-rsb developed by sir bravintech",
   "keywords": ["bot", "node", "baileys", "whatsapp"],
-  "logo": "https://files.catbox.moe/h4yjwp.jpeg",
+  "logo": "https://files.catbox.moe/25vvc9.jpeg",
   "repository": "https://github.com/ekitale/maths-project",
   "success_url": "/",
   "stack": "heroku-24",
@@ -31,7 +31,7 @@
     },
     "REPLY_STATUS_TEXT": {
       "description": "Enter here your message for your bot to notify people that you have viewed there status",
-      "value": "your status have been viewed successfully by jeepers creeper",
+      "value": "your status have been viewed successfully by audi-rsb",
       "required": false
     },
     "AUTO_READ_STATUS": {
@@ -51,12 +51,12 @@
     },
     "BOT_NAME": {
       "description": "Name for your bot",
-      "value": "JËËPËRS ÇRËËPËR KË",
+      "value": "AUDI-RSB",
       "required": false
     },
     "BOT_URL": {
       "description": "Image or video url for your bot menu",
-      "value": "https://files.catbox.moe/eo2r1a.jpeg,https://files.catbox.moe/5mh0lq.jpeg,https://files.catbox.moe/ap04nl.jpeg,https://files.catbox.moe/o3lt6o.jpeg,https://files.catbox.moe/fiouj7.jpeg,https://files.catbox.moe/hur4p5.jpeg,https://files.catbox.moe/kgyfv3.jpeg",
+      "value": "https://files.catbox.moe/4ticg4.jpeg,https://files.catbox.moe/25vvc9.jpeg,https://files.catbox.moe/staomc.jpeg,https://files.catbox.moe/5wmus8.jpeg,https://files.catbox.moe/mzeneb.jpeg,https://files.catbox.moe/l4bjq1.jpeg,https://files.catbox.moe/7506u1.jpeg,https://files.catbox.moe/938xwp.jpeg",
       "required": false
     },
     "PUBLIC_MODE": {
