@@ -6,7 +6,7 @@
 </p>
 
 <h1 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=25&duration=3000&color=00FF00&background=000000&center=true&vCenter=true&width=600&lines=😈+JËËPËRS+CREEPERS+VERSION;🔥+The+Most+Powerful+WhatsApp+Bot;💻+Crafted+by+sir+bravin+🚀;🥰+Fast+😈+Secure+🔒+Reliable+✅" alt="Typing Animation">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=25&duration=3000&color=00FF00&background=000000&center=true&vCenter=true&width=600&lines=😈+Creins+dih ibraal+VERSION;🔥+The+Most+Powerful+WhatsApp+Bot;💻+Crafted+by+sir+creinss+🚀;🥰+Fast+😈+Secure+🔒+Reliable+✅" alt="Typing Animation">
 </h1>
 
 <!-- Profile Card -->
@@ -17,7 +17,7 @@
 
 <!-- Quantum Pulse - Activity Animation -->
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=2000&pause=500&color=FF00FF&background=000000&center=true&vCenter=true&width=400&lines=🟢+Quantum+Pulse:+Alive;💬+Responding+to+your+messages;♥️+Deploying+WhatsApp+Bots;🔔+Always+Online!" alt="jeepers creeper Pulse Animation">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=2000&pause=500&color=FF00FF&background=000000&center=true&vCenter=true&width=400&lines=🟢+Quantum+Pulse:+Alive;💬+Responding+to+your+messages;♥️+Deploying+WhatsApp+Bots;🔔+Always+Online!" alt="creinsdihibraal Pulse Animation">
 </p>
 
 <!-- Banner Image -->
@@ -29,10 +29,10 @@
 
 <!-- Action Buttons -->
 <p align="center">
-  <a href="https://sir-bravin-scanner.onrender.com/ " target="_blank" rel="noopener noreferrer">
+  <a href="https://sir-creins-scanner.onrender.com/ " target="_blank" rel="noopener noreferrer">
     <img title="GET SESSION OPT 1" src="https://img.shields.io/badge/🔑_GET_WHATSAPP_SESSION-000000?style=for-the-badge&logo=quantum&logoColor=white&color=skyblue" width="260" height="50"/>
   </a>
-  <a href="https://dashboard.heroku.com/new?template=https://github.com/sir-bravin111/new-bot" target="_blank" rel="noopener noreferrer">
+  <a href="https://dashboard.heroku.com/new?template=https://github.com/creins faivy/new-bot" target="_blank" rel="noopener noreferrer">
     <img title="DEPLOY WHATSAPP BOT" src="https://img.shields.io/badge/🚀_DEPLOY_ON_HEROKU-000000?style=for-the-badge&logo=heroku&logoColor=white&color=FF00FF" width="260" height="50"/>
   </a>
 </p>
@@ -102,7 +102,7 @@
 </p>
 
 <h3 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=3000&color=FFFFFF&background=000000&center=true&vCenter=true&width=600&lines=💎+WHATSAPP+BOT+Edition+by+sir+bravin;⚡+The+Future+of+WhatsApp+Bots+is+Here" alt="Footer Animation">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=3000&color=FFFFFF&background=000000&center=true&vCenter=true&width=600&lines=💎+WHATSAPP+BOT+Edition+by+sir+creins;⚡+The+Future+of+WhatsApp+Bots+is+Here" alt="Footer Animation">
 </h3>
 
 <p align="center">
