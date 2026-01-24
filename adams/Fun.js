@@ -1,8 +1,8 @@
-//  [SIR BRAVIN EDITION]                                           
+//  [SIR CREINS EDITION]                                           
 //  >> A superposition of elegant code states                           
 //  >> Collapsed into optimal execution                                
-//  >> Scripted by Sir bravin                                    
-//  >> Version: 8.3.5-sir bravin Bot
+//  >> Scripted by Sir ibraal                                    
+//  >> Version: 8.3.5-sir ibraal Bot
 
 const axios = require('axios');
 const cheerio = require('cheerio');
