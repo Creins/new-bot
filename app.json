@@ -1,8 +1,8 @@
 
 
 {
-  "name": "JEEPERS CREEPER",
-  "description": "jeepers creeper developed by jeepers creeper tech",
+  "name": "CREINS DIH IBRAAL",
+  "description": "creins dih ibraal developed by ibraal creeper tech",
   "keywords": ["bot", "node", "baileys", "whatsapp"],
   "logo": "https://files.catbox.moe/h4yjwp.jpeg",
   "repository": "https://github.com/ekitale/maths-project",
@@ -31,7 +31,7 @@
     },
     "REPLY_STATUS_TEXT": {
       "description": "Enter here your message for your bot to notify people that you have viewed there status",
-      "value": "your status have been viewed successfully by jeepers creeper",
+      "value": "your status have been viewed successfully by creins dih ibraal",
       "required": false
     },
     "AUTO_READ_STATUS": {
@@ -51,7 +51,7 @@
     },
     "BOT_NAME": {
       "description": "Name for your bot",
-      "value": "JEEPERS CREEPER",
+      "value": "CREINS DIH IBRAAL",
       "required": false
     },
     "BOT_URL": {
@@ -75,7 +75,7 @@
       "required": false 
     },
     "OWNER_NUMBER": {
-      "description": "Enter your number eg, 254717263689",
+      "description": "Enter your number eg, 254787243487",
       "value": "",
       "required": false 
     },
@@ -86,7 +86,7 @@
     },
     "AUTO_REACT": {
       "description": "Enter your auto react messages",
-      "value": "no",
+      "value": "YOU STATUS WAS SUCCESFULLY VIWED BY CREINS DIH IBRAAL",
       "required": false 
     },
     "AUTO_REACT_STATUS": {
@@ -96,7 +96,7 @@
     },
     "OWNER_NAME": {
       "description": "Owner name",
-      "value": "sir bravin",
+      "value": "IBRAAL",
       "required": false
     },
     "SESSION_ID": {
