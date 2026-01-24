@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUCKY MD XFORCE | PAIR DASHBOARD</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary-color: #00f5ff;
+    --secondary-color: #ff2a6d;
+    --accent-color: #05d9e8;
+    --text-color: #d1f7ff;
+    --background-color: #0a0a1f;
+    --card-background: rgba(16, 18, 63, 0.7);
+    --border-color: rgba(0, 245, 255, 0.3);
+    --glass-effect: rgba(255, 255, 255, 0.08);
+    --shadow-color: rgba(0, 0, 0, 0.8);
+    --button-hover-bg: rgba(0, 245, 255, 0.2);
+    --gradient-primary: linear-gradient(135deg, #00f5ff 0%, #0055ff 100%);
+    --gradient-secondary: linear-gradient(135deg, #ff2a6d 0%, #ff8e00 100%);
+    --gradient-bg: radial-gradient(circle at top, #1a1a4a 0%, #0a0a1f 70%);
+    --glow-effect: 0 0 15px rgba(0, 245, 255, 0.7);
+    --glow-secondary: 0 0 15px rgba(255, 42, 109, 0.7);
+    --border-radius: 16px;
+    --transition-speed: 0.4s ease;
+    --input-bg: rgba(0, 10, 20, 0.5);
+  }
+
+  body.light-mode {
+    --text-color: #0a0a1f;
+    --background-color: #f0f5ff;
+    --card-background: #ffffff;
+    --border-color: rgba(0, 85, 255, 0.3);
+    --glass-effect: rgba(0, 10, 30, 0.05);
+    --shadow-color: rgba(0, 10, 50, 0.15);
+    --button-hover-bg: rgba(0, 85, 255, 0.1);
+    --input-bg: rgba(0, 10, 30, 0.05);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Exo 2', sans-serif;
+    background: var(--gradient-bg);
+    color: var(--text-color);
+    min-height: 100vh;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(0, 245, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(255, 42, 109, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, rgba(5, 217, 232, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .cyber-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      linear-gradient(rgba(0, 245, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 245, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 3rem;
+    background: rgba(10, 10, 31, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  .logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #0a0a1f;
+    box-shadow: var(--glow-effect);
+  }
+
+  .logo-text h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #00f5ff, #ff2a6d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+  }
+
+  .logo-text p {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    letter-spacing: 1px;
+  }
+
+  .nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .toggle-label {
+    font-size: 0.9rem;
+    color: var(--text-color);
+  }
+
+  .toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+  }
+
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-secondary);
+    transition: var(--transition-speed);
+    border-radius: 34px;
+    box-shadow: 0 0 10px rgba(255, 42, 109, 0.5);
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background: white;
+    transition: var(--transition-speed);
+    border-radius: 50%;
+  }
+
+  input:checked + .slider {
+    background: var(--gradient-primary);
+    box-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+  }
+
+  input:checked + .slider:before {
+    transform: translateX(30px);
+  }
+
+  .status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 10, 30, 0.5);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+  }
+
+  .status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #00ff00;
+    box-shadow: 0 0 10px #00ff00;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+
+  main {
+    flex: 1;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .dashboard-title {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .dashboard-title h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #00f5ff, #ff2a6d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 15px rgba(0, 245, 255, 0.5);
+  }
+
+  .dashboard-title p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    max-width: 600px;
+  }
+
+  .pairing-container {
+    width: 100%;
+    max-width: 600px;
+    background: var(--card-background);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px var(--shadow-color);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pairing-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-primary);
+  }
+
+  .pairing-header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .pairing-header h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .pairing-header p {
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 1rem;
+  }
+
+  .input-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .input-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+  }
+
+  .input-container {
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  .input-container input {
+    flex: 1;
+    padding: 1.2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    background: var(--input-bg);
+    color: var(--text-color);
+    font-size: 1rem;
+    font-family: 'Exo 2', sans-serif;
+    transition: var(--transition-speed);
+  }
+
+  .input-container input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 10px rgba(0, 245, 255, 0.5);
+  }
+
+  .input-container button {
+    padding: 1.2rem 1.8rem;
+    background: var(--gradient-primary);
+    color: #0a0a1f;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    font-family: 'Exo 2', sans-serif;
+    cursor: pointer;
+    transition: var(--transition-speed);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .input-container button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), var(--glow-effect);
+  }
+
+  .input-container button:active {
+    transform: translateY(0);
+  }
+
+  .result-container {
+    background: rgba(0, 10, 20, 0.5);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    text-align: center;
+    min-height: 80px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  #pair-result {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+
+  #waiting-message {
+    display: none;
+    color: var(--text-color);
+    font-style: italic;
+  }
+
+  .action-btn {
+    padding: 1rem 2rem;
+    background: var(--gradient-secondary);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    font-family: 'Exo 2', sans-serif;
+    cursor: pointer;
+    transition: var(--transition-speed);
+    display: none;
+    margin: 0 auto;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), var(--glow-secondary);
+  }
+
+  .status-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 1rem;
+  }
+
+  .status-card {
+    background: var(--card-background);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 25px var(--shadow-color);
+    transition: var(--transition-speed);
+  }
+
+  .status-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px var(--shadow-color), var(--glow-effect);
+  }
+
+  .status-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #0a0a1f;
+  }
+
+  .status-info h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    color: var(--text-color);
+    opacity: 0.8;
+  }
+
+  .status-info p {
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Orbitron', monospace;
+  }
+
+  .music-player {
+    background: var(--card-background);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px var(--shadow-color);
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+  }
+
+  .music-player::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--gradient-secondary);
+  }
+
+  .music-player h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .music-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .music-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-bottom: 1rem;
+  }
+
+  .play-btn {
+    background: var(--gradient-primary);
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: var(--transition-speed);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .play-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), var(--glow-effect);
+  }
+
+  .play-btn i {
+    color: #0a0a1f;
+    font-size: 1.5rem;
+  }
+
+  .time-display {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.8;
+  }
+
+  footer {
+    padding: 2rem;
+    text-align: center;
+    margin-top: 3rem;
+    background: rgba(10, 10, 31, 0.8);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--border-color);
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition-speed);
+    opacity: 0.8;
+  }
+
+  .footer-link:hover {
+    opacity: 1;
+    color: var(--primary-color);
+  }
+
+  .copyright {
+    font-size: 0.9rem;
+    opacity: 0.7;
+    margin-top: 1rem;
+  }
+
+  .contact-fab {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: var(--gradient-primary);
+    color: #0a0a1f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 245, 255, 0.5);
+    z-index: 1000;
+    transition: var(--transition-speed);
+    text-decoration: none;
+  }
+
+  .contact-fab:hover {
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 8px 20px rgba(0, 245, 255, 0.7);
+  }
+
+  .particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .particle {
+    position: absolute;
+    background: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: float 15s infinite linear;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0) translateX(0);
+    }
+    100% {
+      transform: translateY(-100vh) translateX(100px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    header {
+      padding: 1rem;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .nav-controls {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .status-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .input-container {
+      flex-direction: column;
+    }
+
+    .dashboard-title h2 {
+      font-size: 2rem;
+    }
+
+    .pairing-container {
+      padding: 1.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .status-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-links {
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .pairing-header h2 {
+      font-size: 1.8rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="cyber-grid"></div>
+  <div class="particles" id="particles"></div>
+
+  <header>
+    <div class="logo-section">
+      <div class="logo">
+        <i class="fas fa-robot"></i>
+      </div>
+      <div class="logo-text">
+        <h1>LUCKY MD XFORCE</h1>
+        <p>Pairing Dashboard</p>
+      </div>
+    </div>
+
+    <div class="nav-controls">
+      <div class="theme-toggle">
+        <span class="toggle-label">DARK</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="themeToggle">
+          <span class="slider"></span>
+        </label>
+        <span class="toggle-label">LIGHT</span>
+      </div>
+
+      <div class="status-indicator">
+        <div class="status-dot"></div>
+        <span>ONLINE</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="dashboard-title">
+      <h2>DEVICE PAIRING</h2>
+      <p>Connect your WhatsApp account using pairing code</p>
+    </div>
+
+    <div class="pairing-container">
+      <div class="pairing-header">
+        <h2>PAIRING CODE</h2>
+        <p>LUCKY MD XFORCE MULTI DEVICE</p>
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">Enter your WhatsApp number with country code:</label>
+        <div class="input-container">
+          <input type="number" id="number" placeholder="Example: 255752593977" required>
+          <button id="submit">GENERATE CODE</button>
+        </div>
+      </div>
+
+      <div class="result-container">
+        <p id="waiting-message" style="display: none;">Please wait, generating pairing code...</p>
+        <div id="pair-result"></div>
+      </div>
+
+      <button id="copy-code" class="action-btn" onclick="copyCode()">COPY CODE</button>
+    </div>
+
+    <div class="status-grid">
+      <div class="status-card">
+        <div class="status-icon">
+          <i class="fas fa-clock"></i>
+        </div>
+        <div class="status-info">
+          <h3>SYSTEM TIME</h3>
+          <p id="clock">--:--:--</p>
+        </div>
+      </div>
+
+      <div class="status-card">
+        <div class="status-icon">
+          <i class="fas fa-microchip"></i>
+        </div>
+        <div class="status-info">
+          <h3>BOT STATUS</h3>
+          <p>READY</p>
+        </div>
+      </div>
+
+      <div class="status-card">
+        <div class="status-icon">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <div class="status-info">
+          <h3>PERFORMANCE</h3>
+          <p>OPTIMAL</p>
+        </div>
+      </div>
+
+      <div class="status-card">
+        <div class="status-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <div class="status-info">
+          <h3>SECURITY</h3>
+          <p>ENABLED</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="music-player">
+      <h3>NOW PLAYING</h3>
+      <div class="music-title">LUCKY MD XFORCE SONG</div>
+      <div class="music-subtitle">by Dev FrediEzra</div>
+      <button class="play-btn" onclick="togglePlay()">
+        <i class="fas fa-pause" id="play-icon"></i>
+      </button>
+      <div class="time-display" id="time1">0:00</div>
+      <div class="music-subtitle">Enjoy the experience!</div>
+      <audio id="audio1" src="https://files.catbox.moe/wdap4t.mp3" loop></audio>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="https://fredi-ai-site.vercel.app" class="footer-link">Website</a>
+        <a href="https://github.com/mr-X-force" class="footer-link">GitHub</a>
+        <a href="https://fredi-ai-contacts-us.vercel.app" class="footer-link">Contact</a>
+        <a href="/" class="footer-link">Main Dashboard</a>
+      </div>
+      <div class="copyright">
+        © 2025 FREDI AI | LUCKY MD XFORCE | ALL RIGHTS RESERVED
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://fredi-ai-contacts-us.vercel.app" class="contact-fab" title="Contact Support">
+    <i class="fas fa-headset"></i>
+  </a>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
+  <script>
+    // Create floating particles
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 20;
+
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+
+        // Random properties
+        const size = Math.random() * 5 + 2;
+        const posX = Math.random() * 100;
+        const posY = Math.random() * 100;
+        const animationDelay = Math.random() * 15;
+        const color = Math.random() > 0.5 ? 'var(--primary-color)' : 'var(--secondary-color)';
+
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${posX}vw`;
+        particle.style.top = `${posY}vh`;
+        particle.style.background = color;
+        particle.style.animationDelay = `${animationDelay}s`;
+
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    // DOM elements
+    const pairResult = document.getElementById("pair-result");
+    const submitBtn = document.getElementById("submit");
+    const numberInput = document.getElementById("number");
+    const copyCodeBtn = document.getElementById("copy-code");
+    const waitingMessage = document.getElementById("waiting-message");
+
+    // Copy code function
+    async function copyCode() {
+      const code = pairResult.innerText.replace('CODE: ', '');
+      try {
+        await navigator.clipboard.writeText(code);
+        copyCodeBtn.innerText = "COPIED!";
+        copyCodeBtn.style.background = "var(--gradient-secondary)";
+        setTimeout(() => {
+          copyCodeBtn.innerText = "COPY CODE";
+          copyCodeBtn.style.background = "";
+        }, 2000);
+      } catch (err) {
+        console.error('Failed to copy: ', err);
+      }
+    }
+
+    // Submit handler
+    submitBtn.addEventListener("click", async (e) => {
+      e.preventDefault();
+
+      if (!numberInput.value) {
+        pairResult.innerHTML = '<p style="color:var(--secondary-color)">Please enter your WhatsApp number with country code</p>';
+        return;
+      }
+
+      const cleanNumber = numberInput.value.replace(/[^0-9]/g, "");
+
+      if (cleanNumber.length < 11) {
+        pairResult.innerHTML = '<p style="color:var(--secondary-color)">Invalid number format</p>';
+        return;
+      }
+
+      // Format number display
+      let formattedNumber = "";
+      const digits = cleanNumber.split('');
+      digits.forEach((digit, index) => {
+        formattedNumber += digit;
+        if (index === 2 || index === 7) {
+          formattedNumber += " ";
+        }
+      });
+
+      numberInput.type = "text";
+      numberInput.value = "+" + formattedNumber;
+      numberInput.style.color = "var(--primary-color)";
+
+      waitingMessage.style.display = "block";
+      pairResult.innerHTML = "";
+      copyCodeBtn.style.display = "none";
+
+      try {
+        const { data } = await axios(`/code?number=${cleanNumber}`);
+        const code = data.code || "Service Unavailable";
+
+        pairResult.innerHTML = `
+          <p style="font-weight:bold; font-size:1.4rem;">
+            CODE: <span style="color:var(--primary-color)">${code}</span>
+          </p>
+        `;
+        copyCodeBtn.style.display = "block";
+        waitingMessage.style.display = "none";
+      } catch (error) {
+        pairResult.innerHTML = '<p style="color:var(--secondary-color)">Error getting pairing code. Please try again.</p>';
+        waitingMessage.style.display = "none";
+      }
+    });
+
+    // Music player controls
+    const audio = document.getElementById('audio1');
+    const playBtn = document.querySelector('.play-btn');
+    const playIcon = document.getElementById('play-icon');
+    const timeDisplay = document.getElementById('time1');
+
+    // Auto-play music when page loads (with user interaction)
+    document.addEventListener('click', function initAudio() {
+      audio.play().then(() => {
+        playIcon.classList.replace('fa-play', 'fa-pause');
+        updateTimeDisplay();
+      }).catch(error => {
+        console.log('Auto-play prevented:', error);
+      });
+      document.removeEventListener('click', initAudio);
+    }, { once: true });
+
+    function togglePlay() {
+      if (audio.paused) {
+        audio.play();
+        playIcon.classList.replace('fa-play', 'fa-pause');
+      } else {
+        audio.pause();
+        playIcon.classList.replace('fa-pause', 'fa-play');
+      }
+    }
+
+    function updateTimeDisplay() {
+      const minutes = Math.floor(audio.currentTime / 60);
+      const seconds = Math.floor(audio.currentTime % 60);
+      timeDisplay.textContent = `${minutes}:${String(seconds).padStart(2, '0')}`;
+
+      if (!audio.paused) {
+        requestAnimationFrame(updateTimeDisplay);
+      }
+    }
+
+    audio.addEventListener('timeupdate', updateTimeDisplay);
+
+    // Clock function
+    function updateClock() {
+      const now = new Date();
+      const hours = now.getHours().toString().padStart(2, '0');
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+
+      document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+    }
+
+    // Theme toggle
+    document.getElementById('themeToggle').addEventListener('change', function() {
+      document.body.classList.toggle('light-mode');
+    });
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      createParticles();
+      updateClock();
+      setInterval(updateClock, 1000);
+    });
+  </script>
+</body>
+</html>
