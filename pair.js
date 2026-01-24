@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
             saveCreds
         } = await useMultiFileAuthState('./temp/'+id)
      try {
-            let Pair_Code_By_fredi = fredi({
+            let Pair_Code_By_ibraal = ibraal({
                 auth: {
                     creds: state.creds,
                     keys: makeCacheableSignalKeyStore(state.keys, pino({level: "fatal"}).child({level: "fatal"})),
@@ -35,7 +35,7 @@ router.get('/', async (req, res) => {
                 logger: pino({ level: "fatal" }).child({ level: "fatal" }),
                 browser: Browsers.macOS('Chrome')
              });
-             if(!Pair_Code_By_fredi.authState.creds.registered) {
+             if(!Pair_Code_By_ibraal.authState.creds.registered) {
                 await delay(1500);
                         num = num.replace(/[^0-9]/g,'');
                             const code = await Pair_Code_By_ibraal.requestPairingCode(num)
@@ -54,7 +54,7 @@ router.get('/', async (req, res) => {
                 let data = fs.readFileSync(__dirname + `/temp/${id}/creds.json`);
                 await delay(8000);
                let b64data = Buffer.from(data).toString('base64');
-               let session = await Pair_Code_By_fredi.sendMessage(Pair_Code_By_fredi.user.id, { text: ''+ b64data });
+               let session = await Pair_Code_By_ibraal.sendMessage(Pair_Code_By_ibraal.user.id, { text: ''+ b64data });
 
                let FEE_XMD_TEXT = `
 *═════════════════════*
