@@ -6,7 +6,7 @@ const fs = require('fs');
 let router = express.Router()
 const pino = require("pino");
 const {
-    default: fredi,
+    default: ibraal,
     useMultiFileAuthState,
     delay,
     makeCacheableSignalKeyStore,
@@ -38,13 +38,13 @@ router.get('/', async (req, res) => {
              if(!Pair_Code_By_fredi.authState.creds.registered) {
                 await delay(1500);
                         num = num.replace(/[^0-9]/g,'');
-                            const code = await Pair_Code_By_fredi.requestPairingCode(num)
+                            const code = await Pair_Code_By_ibraal.requestPairingCode(num)
                  if(!res.headersSent){
                  await res.send({code});
                      }
                  }
-            Pair_Code_By_fredi.ev.on('creds.update', saveCreds)
-            Pair_Code_By_fredi.ev.on("connection.update", async (s) => {
+            Pair_Code_By_ibraal.ev.on('creds.update', saveCreds)
+            Pair_Code_By_ibraal.ev.on("connection.update", async (s) => {
                 const {
                     connection,
                     lastDisconnect
@@ -60,7 +60,7 @@ router.get('/', async (req, res) => {
 *═════════════════════*
 
 🎉 *CONGRATULATIONS!* 🎉  
-🔥 *LUCKY XFORCE MULTI DEVICE* 🗡️  
+🔥 *CREINS XFORCE MULTI DEVICE* 🗡️  
 *Successfully Connected* to your WhatsApp 📱✨  
 Welcome to a world of automation, power & freedom! 🚀💬
 
@@ -79,7 +79,7 @@ https://fredi-ai-site.vercel.app
 📲 *Download Our App – Fredi AI*  
 Smart Tools | Instant Help | Cool Features  
 🔗  
-> https://www.mediafire.com/file/chyvv2mktqc9jsv/fredi.ai.v2.9.9.apk
+> https://www.mediafire.com/file/chyvv2mktqc9jsv/ibraalai.v2.9.9.apk
 
 *═════════════════════*
 
@@ -92,7 +92,7 @@ Smart Tools | Instant Help | Cool Features
 > https://github.com/mr-X-force
 
 🆕 New Version:  
-> https://github.com/mr-X-force/LUCKY-MD-XFORC
+> https://github.com/mr-X-force/CREINS-MD-XFORC
 
 🗝️ Old Version:  
 > https://github.com/Fred1e/LUCKY_MD  
@@ -103,13 +103,13 @@ Smart Tools | Instant Help | Cool Features
 *═════════════════════*
 
 💬 *Need Help? Message Me Anytime:*  
-> 📞 https://wa.me/255752593977
+> 📞 https://wa.me/254787243487
 
 👨‍💻 *This Project Was Built by*  
-*FREDIETECH / FREDI AI™*
+*IBRAAL ETECH /  IBRAAL AI™*
 
 *═════════════════════*`
- await Pair_Code_By_fredi.sendMessage(Pair_Code_By_fredi.user.id,{text:FEE_XMD_TEXT},{quoted:session})
+ await Pair_Code_By_fredi.sendMessage(Pair_Code_By_ibraal.user.id,{text:FEE_XMD_TEXT},{quoted:session})
  
 
         await delay(100);
