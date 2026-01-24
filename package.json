@@ -1,12 +1,12 @@
 {
     "description": "fee-sessions",
-    "main": "./fredi.js",
+    "main": "./ibraal.js",
   "engines" : { 
     "npm" : ">=9.7.2",
     "node" : ">=20.0.0"
     },
     "scripts": {
-    "start": "node fredi.js"
+    "start": "node ibraal.js"
   },
   "author": "Fee Tech",
   "license": "GPL-3.0 license",
