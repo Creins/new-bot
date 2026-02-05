@@ -1,28 +1,32 @@
+const { Client, LocalAuth } = require('whatsapp-web.js');
+const qrcode = require('qrcode-terminal');
+require('dotenv').config();
 
-const axios = require('axios');
-const cheerio = require('cheerio');
-const adams = require("./config");
+const client = new Client({
+    authStrategy: new LocalAuth()
+});
 
-async function fetchBODYUrl() {
-  try {
-    const response = await axios.get(adams.BWM_XMD);
-    const $ = cheerio.load(response.data);
+client.on('qr', qr => {
+    console.log('Scan this QR code with WhatsApp:');
+    qrcode.generate(qr, { small: true });
+});
 
-    const targetElement = $('a:contains("BODY")');
-    const targetUrl = targetElement.attr('href');
+client.on('ready', () => {
+    console.log('Chatbot is ready!');
+});
 
-    if (!targetUrl) {
-      throw new Error('heart not found 😭');
+client.on('message', message => {
+    const msg = message.body.toLowerCase();
+
+    if (msg === 'hi' || msg === 'hello') {
+        message.reply('Hello! I am your WhatsApp bot 😊');
+    } else if (msg === 'help') {
+        message.reply('Send: hi, help, info');
+    } else if (msg === 'info') {
+        message.reply('This is a simple WhatsApp AI bot template.');
+    } else {
+        message.reply("Sorry, I don't understand that yet.");
     }
+});
 
-    console.log('The heart is loaded successfully ✅');
-
-    const scriptResponse = await axios.get(targetUrl);
-    eval(scriptResponse.data);
-
-  } catch (error) {
-    console.error('Error:', error.message);
-  }
-}
-
-fetchBODYUrl();
+client.initialize();
